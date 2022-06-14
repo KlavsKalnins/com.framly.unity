@@ -20,5 +20,12 @@
     "name": "Klavs",
     "email": "klavskalninss@gmail.com",
     "url": "https://github.com/KlavsKalnins"
-  }
+  },
+  "samples": [
+      {
+          "displayName": "counter example",
+          "description": "Contains 3 step menu and a counter game",
+          "path": "Samples~/GenericCounter"
+      }
+  ]
 }

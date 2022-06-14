@@ -1,0 +1,19 @@
+{
+    "name": "Framly.Image.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ac74710201791dc478744f6261cb117f",
+        "GUID:b8a5dbacf1c3757488603bd4e31070ed"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,24 @@
+{
+  "name": "com.klavs.framly",
+  "version": "1.0.0",
+  "displayName": "Framly",
+  "description": "Framly a unity framework for composing basic functionality",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://docs.google.com/document/d/1xSUyvxBCm9Do5Z0bWjpOW-sw_maxQLITCPAcB-PI9bs/edit?usp=sharing",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "dependencies": {
+    "com.unity.textmeshpro": ""
+  },
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "Klavs",
+    "email": "klavskalninss@gmail.com",
+    "url": "https://github.com/KlavsKalnins"
+  }
+}

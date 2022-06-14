@@ -7,7 +7,8 @@ namespace Framly
 {
     public static class EnumGenerator
     {
-        public static string path = $"Assets/Framly/GeneratedEnums/";
+        // get script root path and continue ./GeneratedEnums/
+        public static string path = $"Packages/com.klavs.framly/Runtime/GeneratedEnums/";
         public static string csharp = ".cs"; // TODO: maybe can hardcode it? for other scripts support file enum types if needed
         public static void CreateEnum(string fileName, string[] enumList)
         {

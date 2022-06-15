@@ -23,7 +23,7 @@
   },
   "samples": [
       {
-          "displayName": "counter example",
+          "displayName": "Counter Example",
           "description": "Contains 3 step menu and a counter game",
           "path": "Samples~/GenericCounter"
       }

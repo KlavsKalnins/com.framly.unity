@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManagerData : MonoBehaviour
 {
     // EXAMPLE of Data retrieve
+    public static ManagerData Instance { get; private set; }
     
     [System.Serializable]
     public class Lang
@@ -30,5 +31,9 @@ public class ManagerData : MonoBehaviour
     [SerializeField] private TextAsset _dataAsset;
     public Root data;
 
-    private void OnEnable() => data = Framly.DataSet.CreateDataSet<Root>(_dataAsset);
+    private void OnEnable()
+    {
+        data = Framly.DataSet.CreateDataSet<Root>(_dataAsset);
+        Instance = this;
+    }
 }

@@ -10,8 +10,7 @@ namespace Framly
         public static ManagerUI Instance { get; private set; }
         public GameObject[] ui;
         public static Action<int> OnPanelChange;
-       // public static Action<PanelType> OnPanelChangePanel;
-        [Tooltip("`Q` and `W` to cycle trough\nSet .Panel = int; to change panel")]
+        [Tooltip("Set .Panel = int; to change panel")]
         [SerializeField] int _panel;
         public int Panel
         {
@@ -21,11 +20,10 @@ namespace Framly
 
         protected void SetPanel(int index)
         {
-            if (index < 0)
-                return;
             int getPanelsLength = ui.Length;
-            if (index >= getPanelsLength)
+            if (index < 0 || index >= getPanelsLength)
                 return;
+
             for (int i = 0; i < getPanelsLength; i++)
             {
                 ui[i].SetActive(false);
@@ -53,18 +51,6 @@ namespace Framly
         private void OnEnable()
         {
             Instance = this;
-        }
-        private void Update()
-        {
-            Inputs();
-        }
-        private void Inputs()
-        {
-            // Make this in new Input system for more flexibility (inputs in one single scriptable object?)
-            if (Input.GetKeyDown(KeyCode.Q))
-                Panel--;
-            if (Input.GetKeyDown(KeyCode.W))
-                Panel++;
         }
     }
 }

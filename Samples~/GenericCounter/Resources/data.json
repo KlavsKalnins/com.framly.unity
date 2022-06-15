@@ -1,0 +1,32 @@
+{
+  "LV": [
+    {
+      "Actions": "Sakt",
+      "Anthem": "Dievs, svētī Latviju!"
+    },
+    {
+      "Actions": "Atpakaļ",
+      "Anthem": "Dievs, sargā karalieni"
+    }
+  ],
+  "EN": [
+    {
+      "Actions": "Start",
+      "Anthem": "God bless Latvia!"
+    },
+    {
+      "Actions": "Back",
+      "Anthem": "God Save the Queen"
+    }
+  ],
+  "Files": [
+    {
+      "AudioName": "lv_audio.mp3",
+      "SpriteName": "flag_lv.png"
+    },
+    {
+      "AudioName": "en_audio.mp3",
+      "SpriteName": "flag_en.png"
+    }
+  ]
+}

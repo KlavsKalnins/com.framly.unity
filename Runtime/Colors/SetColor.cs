@@ -16,10 +16,7 @@ public class SetColor : MonoBehaviour
     [SerializeField] ComponentType componentType; // Automatically sets correct component if it finds it on gameObject
     public Framly.ColorType colorType;
     public int additionalColorIndex;
-    void Start()
-    {
-        // FSetColor(Color.red);
-    }
+
     public void FSetColor(Color color)
     {
         var component = GetComponent(componentType.ToString());

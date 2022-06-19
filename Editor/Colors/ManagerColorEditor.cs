@@ -29,31 +29,10 @@ namespace Framly
             var items = Resources.FindObjectsOfTypeAll<SetColor>();
             foreach (var item in items)
             {
-                SetItemColor(item);
+                managerColor.SetItemColor(item);
             }
             SceneView.RepaintAll();
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
-        }
-        
-        private static void SetItemColor(SetColor item)
-        {
-            // TODO: IJob?
-            managerColor = FindObjectOfType<ManagerColor>();
-            switch (item.colorType)
-            {
-                case ColorType.dominant:
-                    item.FSetColor(managerColor.palette.color.dominant);
-                    break;
-                case ColorType.complementary:
-                    item.FSetColor(managerColor.palette.color.complementary);
-                    break;
-                case ColorType.accent:
-                    item.FSetColor(managerColor.palette.color.accent);
-                    break;
-                case ColorType.additional:
-                    item.FSetColor(managerColor.palette.color.additional[item.additionalColorIndex]);
-                    break;
-            }
         }
     }
 }

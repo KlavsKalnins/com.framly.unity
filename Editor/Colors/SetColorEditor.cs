@@ -6,11 +6,17 @@ using UnityEditor;
 namespace Framly
 {
     [CustomEditor(typeof(SetColor))]
+    [CanEditMultipleObjects]
     public class SetColorEditor : Editor
     {
+        ManagerColor colorManager;
+        ManagerColorEditor colorManagerEditor;
+        SetColor imageColor;
         public override void OnInspectorGUI()
         {
-            var imageColor = (SetColor)target;
+            imageColor = (SetColor)target;
+            colorManager = FindObjectOfType<ManagerColor>();
+            colorManagerEditor = FindObjectOfType<ManagerColorEditor>();
             if (imageColor.colorType == ColorType.additional)
             {
                 DrawDefaultInspector();
@@ -23,6 +29,17 @@ namespace Framly
                 if (EditorGUI.EndChangeCheck())
                     serializedObject.ApplyModifiedProperties();
             }
+            SetColor();
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void SetColor()
+        {
+            if (colorManager == null)
+                return;
+            Color color = colorManager.GetPaletteColor(imageColor);
+            Rect r = new Rect(0, 0, 20, 20);
+            EditorGUI.DrawRect(r, color);
         }
     }
 }

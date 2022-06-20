@@ -12,6 +12,7 @@ namespace Framly
         public static string csharp = ".cs"; // TODO: maybe can hardcode it? for other scripts support file enum types if needed
         public static void CreateEnum(string fileName, string[] enumList)
         {
+
             string filePathAndName = $"{path}{fileName}{csharp}";
             using (StreamWriter streamWriter = new StreamWriter(filePathAndName))
             {

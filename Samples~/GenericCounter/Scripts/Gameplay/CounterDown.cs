@@ -5,9 +5,9 @@ using Framly;
 
 public class CounterDown : MonoBehaviour
 {
-    [SerializeField] FloatVar counterTimer;
-    [SerializeField] GameEvent _events;
-    [SerializeField] GameEvent _onCounterFinished;
+    [SerializeField] FYFloat counterTimer;
+    [SerializeField] FYGameEvent _events;
+    [SerializeField] FYGameEvent _onCounterFinished;
     private void OnEnable()
     {
 

@@ -33,7 +33,7 @@ public class ManagerData : MonoBehaviour
 
     private void OnEnable()
     {
-        data = Framly.DataSet.CreateDataSet<Root>(_dataAsset);
+        data = Framly.FYDataSet.CreateDataSet<Root>(_dataAsset);
         Instance = this;
     }
 }

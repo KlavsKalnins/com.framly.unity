@@ -12,25 +12,29 @@ namespace Framly
         FYManagerColor colorManager;
         FYManagerColorEditor colorManagerEditor;
         FYColor imageColor;
+        static int scale = 0;
         public override void OnInspectorGUI()
         {
             imageColor = (FYColor)target;
             colorManager = FindObjectOfType<FYManagerColor>();
             colorManagerEditor = FindObjectOfType<FYManagerColorEditor>();
+
+            if (colorManager.palette == null)
+                return;
+
+            serializedObject.Update();
+            EditorGUI.BeginChangeCheck();
+            DrawPropertiesExcluding(serializedObject, "additionalColorIndex");
+            if (EditorGUI.EndChangeCheck())
+                serializedObject.ApplyModifiedProperties();
+
             if (imageColor.colorType == Enums.ColorType.additional)
             {
-                DrawDefaultInspector();
-            }
-            else
-            {
-                serializedObject.Update();
-                EditorGUI.BeginChangeCheck();
-                DrawPropertiesExcluding(serializedObject, "additionalColorIndex");
-                if (EditorGUI.EndChangeCheck())
-                    serializedObject.ApplyModifiedProperties();
+                imageColor.additionalColorIndex = EditorGUILayout.IntSlider(imageColor.additionalColorIndex, 0, colorManager.palette.color.additional.Length - 1);
             }
             SetColor();
             serializedObject.ApplyModifiedProperties();
+            SceneView.RepaintAll();
         }
 
         private void SetColor()

@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// TODO:
+/*
+ * Automatically sets correct ComponentType if it finds it on gameObject
+ * MeshRenderer materials from EditorInspector allow to set materials[index] color
+ */
+
 namespace Framly {
     public class FYColor : MonoBehaviour
     {
@@ -11,10 +17,11 @@ namespace Framly {
         {
             Image,
             TMP_Text,
+            SpriteRenderer,
             Camera,
         }
 
-        [SerializeField] ComponentType componentType; // Automatically sets correct component if it finds it on gameObject
+        [SerializeField] ComponentType componentType;
         public Enums.ColorType colorType;
         public int additionalColorIndex;
         public void FSetColor(Color color)
@@ -30,6 +37,9 @@ namespace Framly {
                     break;
                 case TMP_Text:
                     component.GetComponent<TMP_Text>().color = color;
+                    break;
+                case SpriteRenderer:
+                    component.GetComponent<SpriteRenderer>().color = color;
                     break;
             }
         }

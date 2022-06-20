@@ -1,18 +1,18 @@
-#if UNITY_EDITOR // Should figure if its better to wrapp the whole thing in this so it wouldnt trigger perhaps
+#if UNITY_EDITOR
 using UnityEditor;
-#endif
 using System.IO;
 using System.Text.RegularExpressions;
+#endif
+// shoould move this to Non-Runtime scripts
 namespace Framly
 {
     public static class FYEnumGenerator
     {
-        // get script root path and continue ./GeneratedEnums/
         public static string path = $"Packages/com.klavs.framly/Runtime/GeneratedEnums/";
-        public static string csharp = ".cs"; // TODO: maybe can hardcode it? for other scripts support file enum types if needed
+        public static string csharp = ".cs";
         public static void CreateEnum(string fileName, string[] enumList)
         {
-
+#if UNITY_EDITOR
             string filePathAndName = $"{path}{fileName}{csharp}";
             using (StreamWriter streamWriter = new StreamWriter(filePathAndName))
             {
@@ -29,7 +29,6 @@ namespace Framly
                 streamWriter.WriteLine("\t}");
                 streamWriter.WriteLine("}");
             }
-#if UNITY_EDITOR
             AssetDatabase.Refresh();
 #endif
         }

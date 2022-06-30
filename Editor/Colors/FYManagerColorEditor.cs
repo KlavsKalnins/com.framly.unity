@@ -26,11 +26,7 @@ namespace Framly
         [MenuItem("Framly/Repaint Components")]
         public static void PaintComponents()
         {
-            var items = Resources.FindObjectsOfTypeAll<FYColor>();
-            foreach (var item in items)
-            {
-                managerColor.SetItemColor(item);
-            }
+            managerColor.Repaint();
             SceneView.RepaintAll();
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }

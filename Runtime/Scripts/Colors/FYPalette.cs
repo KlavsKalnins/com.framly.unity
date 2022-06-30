@@ -18,5 +18,10 @@ namespace Framly
             public Color[] additional;
         }
         public ColorGroup color;
+
+        public void SetPalette(FYPalette newPalette)
+        {
+            color = newPalette.color;
+        }
     }
 }

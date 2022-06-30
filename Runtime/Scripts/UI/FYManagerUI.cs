@@ -11,14 +11,15 @@ namespace Framly
         public GameObject[] ui;
         public static Action<int> OnPanelChange;
         [Tooltip("Set .Panel = int; to change panel")]
-        [SerializeField] int _panel;
-        public int Panel
+        [SerializeField] FYInt _panelIndex;
+        [SerializeField] FYGameEvent onPanelChange;
+
+        public void SetPanel()
         {
-            get { return _panel; }
-            set { SetPanel(value); }
+            SetPanel(_panelIndex.value);
         }
 
-        protected void SetPanel(int index)
+        public void SetPanel(int index)
         {
             int getPanelsLength = ui.Length;
             if (index < 0 || index >= getPanelsLength)
@@ -32,8 +33,8 @@ namespace Framly
                     if (i == index)
                     {
                         ui[i].SetActive(true);
-                        _panel = index;
-                        OnPanelChange?.Invoke(Panel);
+                        _panelIndex.value = index;
+                        // onPanelChange.Raise();
                     }
                 }
                 catch (Exception ex)
@@ -44,9 +45,9 @@ namespace Framly
         }
         public void SetPanel(Enums.PanelType panel)
         {
-            Panel = (int)panel;
+            SetPanel((int)panel);
         }
-        public Enums.PanelType GetPanel() => (Enums.PanelType)Panel;
+        public Enums.PanelType GetPanel() => (Enums.PanelType)_panelIndex.value;
 
         private void OnEnable()
         {

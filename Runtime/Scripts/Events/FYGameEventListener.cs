@@ -13,11 +13,15 @@ namespace Framly
 
         private void OnEnable()
         {
+            if (Event == null)
+                return;
             Event.RegisterListener(this);
         }
 
         private void OnDisable()
         {
+            if (Event == null)
+                return;
             Event.UnregisterListener(this);
         }
 

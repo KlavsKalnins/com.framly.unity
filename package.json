@@ -1,6 +1,6 @@
 {
   "name": "com.klavs.framly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Framly",
   "description": "Framly a unity framework for composing basic functionality",
   "unity": "2021.3",

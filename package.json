@@ -1,10 +1,9 @@
 {
   "name": "com.klavs.framly",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "displayName": "Framly",
   "description": "Framly a unity framework for composing basic functionality",
   "unity": "2021.3",
-  "unityRelease": "",
   "documentationUrl": "https://docs.google.com/document/d/1xSUyvxBCm9Do5Z0bWjpOW-sw_maxQLITCPAcB-PI9bs/edit?usp=sharing",
   "changelogUrl": "https://example.com/changelog.html",
   "licensesUrl": "https://example.com/licensing.html",
@@ -22,10 +21,10 @@
     "url": "https://github.com/KlavsKalnins"
   },
   "samples": [
-      {
-          "displayName": "Counter Example",
-          "description": "Contains 3 step menu and a counter game",
-          "path": "Samples~/GenericCounter"
-      }
+    {
+      "displayName": "Counter Example",
+      "description": "Contains 3 step menu and a counter game",
+      "path": "Samples~/GenericCounter"
+    }
   ]
 }

@@ -29,9 +29,9 @@ namespace Framly
             if (_managerUI == null)
                 return;
             if (Input.GetKeyDown(_panelDown))
-                _managerUI.Panel--;
+                _managerUI.SetPanel(_managerUI.GetPanel() - 1);
             if (Input.GetKeyDown(_panelUp))
-                _managerUI.Panel++;           
+                _managerUI.SetPanel(_managerUI.GetPanel() + 1);
         }
     }
 }

@@ -9,15 +9,18 @@ namespace Framly
     [CanEditMultipleObjects]
     public class FYColorEditor : Editor
     {
-        FYManagerColor colorManager;
-        FYManagerColorEditor colorManagerEditor;
+        FYManagerTheme colorManager;
         FYColor imageColor;
-        static int scale = 0;
+
         public override void OnInspectorGUI()
         {
             imageColor = (FYColor)target;
-            colorManager = FindObjectOfType<FYManagerColor>();
-            colorManagerEditor = FindObjectOfType<FYManagerColorEditor>();
+            colorManager = FindObjectOfType<FYManagerTheme>();
+            if (colorManager == null)
+            {
+                EditorGUILayout.LabelField("FYManagerTheme in hierarchy not found!");
+                return;
+            }
 
             if (colorManager.palette == null)
                 return;
@@ -28,6 +31,11 @@ namespace Framly
             if (EditorGUI.EndChangeCheck())
                 serializedObject.ApplyModifiedProperties();
 
+            if (colorManager.palette.color.additional.Length - 1 < 0)
+            {
+                EditorGUILayout.LabelField("No additional color found in FYManagerTheme!");
+                return;
+            }
             if (imageColor.colorType == Enums.ColorType.additional)
             {
                 imageColor.additionalColorIndex = EditorGUILayout.IntSlider(imageColor.additionalColorIndex, 0, colorManager.palette.color.additional.Length - 1);

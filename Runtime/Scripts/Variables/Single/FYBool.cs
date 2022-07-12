@@ -25,7 +25,7 @@ namespace Framly
 
         public override string GetStringValue()
         {
-            return value.ToString();
+            return preffix + value + suffix;
         }
     }
 }

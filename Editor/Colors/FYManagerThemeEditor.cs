@@ -5,10 +5,10 @@ using UnityEditor;
 
 namespace Framly
 {
-    [CustomEditor(typeof(FYManagerColor))]
+    [CustomEditor(typeof(FYManagerTheme))]
     public class FYManagerColorEditor : Editor
     {
-        public static FYManagerColor managerColor;
+        public static FYManagerTheme managerColor;
         public override void OnInspectorGUI()
         {
             // TODO:
@@ -17,7 +17,7 @@ namespace Framly
              * Custom Editor Only Shows if a scriptable Object is seleted
              */
             DrawDefaultInspector();
-            managerColor = (FYManagerColor)target;
+            managerColor = (FYManagerTheme)target;
             if (GUILayout.Button("Set Color Scheme"))
             {
                 PaintComponents();

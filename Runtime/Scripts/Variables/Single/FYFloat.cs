@@ -9,7 +9,6 @@ namespace Framly
     {
         public float value;
         [SerializeField] int decimalPlaces = 2;
-        [SerializeField] string suffix;
 
         public void SetValue(float v)
         {
@@ -32,7 +31,7 @@ namespace Framly
         }
         public override string GetStringValue()
         {
-            return value.ToString("F" + decimalPlaces) + suffix;
+            return preffix + value.ToString("F" + decimalPlaces) + suffix;
         }
     }
 }

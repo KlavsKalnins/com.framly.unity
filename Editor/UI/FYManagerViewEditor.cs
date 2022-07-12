@@ -5,29 +5,29 @@ using UnityEditor;
 
 namespace Framly
 {
-    [CustomEditor(typeof(FYManagerUI))]
-    public class ManagerUIEditor : Editor
+    [CustomEditor(typeof(FYManagerView))]
+    public class FYManagerViewEditor : Editor
     {
-        public static FYManagerUI manager; // should cache only once, see how Editor does it
+        public static FYManagerView manager; // should cache only once, see how Editor does it
         public override void OnInspectorGUI()
         {
             if (GUILayout.Button("Generate Enum"))
             {
                 GenerateEnums();
             }
-            manager = (FYManagerUI)target;
+            manager = (FYManagerView)target;
             DrawDefaultInspector();
         }
 
         [MenuItem("Framly/Generate/PanelType Enum")]
         public static void GenerateEnums()
         {
-            manager = FindObjectOfType<FYManagerUI>();
+            manager = FindObjectOfType<FYManagerView>();
             List<string> enumList = new List<string>();
-            for (int i = 0; i < manager.ui.Length; i++)
+            for (int i = 0; i < manager.views.Length; i++)
             {
-                if (manager.ui[i] != null)
-                    enumList.Add(manager.ui[i].name);
+                if (manager.views[i] != null)
+                    enumList.Add(manager.views[i].name);
             }
             FYEnumGenerator.CreateEnum("PanelType", enumList.ToArray());
         }

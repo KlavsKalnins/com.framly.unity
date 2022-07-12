@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Framly
 {
-    public class FYManagerUI : MonoBehaviour
+    public class FYManagerView : MonoBehaviour
     {
-        public static FYManagerUI Instance { get; private set; }
-        public GameObject[] ui;
+        public static FYManagerView Instance { get; private set; }
+        public GameObject[] views;
         public static Action<int> OnPanelChange;
         [Tooltip("Set .Panel = int; to change panel")]
         [SerializeField] FYInt _panelIndex;
@@ -21,20 +21,19 @@ namespace Framly
 
         public void SetPanel(int index)
         {
-            int getPanelsLength = ui.Length;
+            int getPanelsLength = views.Length;
             if (index < 0 || index >= getPanelsLength)
                 return;
 
             for (int i = 0; i < getPanelsLength; i++)
             {
-                ui[i].SetActive(false);
+                views[i].SetActive(false);
                 try
                 {
                     if (i == index)
                     {
-                        ui[i].SetActive(true);
+                        views[i].SetActive(true);
                         _panelIndex.value = index;
-                        // onPanelChange.Raise();
                     }
                 }
                 catch (Exception ex)

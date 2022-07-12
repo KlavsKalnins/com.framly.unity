@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd3f45edf0ee4594c97cbdbb3860278b, type: 3}
-  m_Name: CanvasPanelIndex
+  m_Name: Integer
   m_EditorClassIdentifier: 
   value: 0

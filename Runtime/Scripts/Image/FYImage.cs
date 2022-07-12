@@ -12,8 +12,12 @@ namespace Framly
 
         public void SetSprite(Sprite sprite)
         {
-            _image = GetComponent<Image>();
-            _image.sprite = sprite;
+            if (TryGetComponent(out Image component))
+            {
+                _image = component;
+                _image.sprite = sprite;
+            }
+
         }
     }
 }

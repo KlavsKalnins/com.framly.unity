@@ -24,6 +24,8 @@ namespace Framly
                 {
                     if (enumList[i].Contains(" "))
                         enumList[i] = Regex.Replace(enumList[i], @"\s+", "");
+                    if (enumList[i] == "")
+                        return;
                     streamWriter.WriteLine("\t\t" + enumList[i] + ",");
                 }
                 streamWriter.WriteLine("\t}");

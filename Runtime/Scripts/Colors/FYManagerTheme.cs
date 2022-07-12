@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Framly
 {
-    public class FYManagerColor : MonoBehaviour
+    public class FYManagerTheme : MonoBehaviour
     {
         [SerializeField] FYPalette[] paletteList;
         public FYPalette palette;

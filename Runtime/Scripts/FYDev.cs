@@ -10,14 +10,14 @@ namespace Framly
          * Create extensible solution so any variables can be added simply
          * 
          */
-        FYManagerUI _managerUI;
+        FYManagerView _managerUI;
         [Header("UI cycling")]
         [SerializeField] KeyCode _panelDown = KeyCode.Q;
         [SerializeField] KeyCode _panelUp = KeyCode.W;
 
         private void Start()
         {
-            _managerUI = FYManagerUI.Instance;
+            _managerUI = FYManagerView.Instance;
         }
         private void Update()
         {

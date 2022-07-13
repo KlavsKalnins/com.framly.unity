@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 namespace Framly
 {
-    [CreateAssetMenu(fileName = "Palette Variant", menuName = "Framly/PaletteColors", order = 1)]
+    [CreateAssetMenu(fileName = "Palette", menuName = "Framly/Palette", order = 1)]
     public class FYPalette : ScriptableObject
     {
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Framly
 {
-    [CustomEditor(typeof(FYGameEvent), editorForChildClasses: true)]
+    [CustomEditor(typeof(FYEvent), editorForChildClasses: true)]
     public class FYEventEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -12,7 +12,7 @@ namespace Framly
 
             GUI.enabled = Application.isPlaying;
 
-            FYGameEvent e = target as FYGameEvent;
+            FYEvent e = target as FYEvent;
             if (GUILayout.Button("Raise"))
                 e.Raise();
         }

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Framly
@@ -12,7 +10,7 @@ namespace Framly
         public static Action<int> OnPanelChange;
         [Tooltip("Set .Panel = int; to change panel")]
         [SerializeField] FYInt _panelIndex;
-        [SerializeField] FYGameEvent onPanelChange;
+        [SerializeField] FYEvent onPanelChange;
 
         public void SetPanel()
         {

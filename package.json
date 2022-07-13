@@ -23,14 +23,9 @@
   },
   "samples": [
     {
-      "displayName": "Counter Example",
-      "description": "Contains 3 step menu and a counter game",
-      "path": "Samples~/GenericCounter"
-    },
-    {
-      "displayName": "GenericGame",
-      "description": "Contains a generic game with localization, UI flow, and additional implementatio Examples",
-      "path": "Samples~/GenericGame"
+      "displayName": "SampleFramly",
+      "description": "Generic Example of minimal Project",
+      "path": "Samples~/SampleFramly"
     }
   ]
 }

@@ -1,14 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Framly
 {
     public class FYManagerTheme : MonoBehaviour
     {
+        public static FYManagerTheme Instance { get; private set; }
         [SerializeField] FYPalette[] paletteList;
         public FYPalette palette;
+
+        private void OnEnable()
+        {
+            Instance = this;
+        }
 
         public void SetPaletteFromList(FYBool toggle)
         {
@@ -72,7 +75,7 @@ namespace Framly
                 case Enums.ColorType.additional:
                     item.FSetColor(palette.color.additional[item.additionalColorIndex]);
                     return palette.color.additional[item.additionalColorIndex];
-                    default:
+                default:
                     return new Color(0, 0, 0, 0);
             }
         }

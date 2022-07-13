@@ -5,22 +5,22 @@ namespace Framly
 {
     public static class FYGradient
     {
-        public static UnityEngine.Gradient Lerp(this UnityEngine.Gradient a, UnityEngine.Gradient b, float t)
+        public static Gradient Lerp(this Gradient a, Gradient b, float t)
         {
             return Lerp(a, b, t, false, false);
         }
 
-        public static UnityEngine.Gradient LerpNoAlpha(this UnityEngine.Gradient a, UnityEngine.Gradient b, float t)
+        public static Gradient LerpNoAlpha(this Gradient a, Gradient b, float t)
         {
             return Lerp(a, b, t, true, false);
         }
 
-        public static UnityEngine.Gradient LerpNoColor(this UnityEngine.Gradient a, UnityEngine.Gradient b, float t)
+        public static Gradient LerpNoColor(this Gradient a, Gradient b, float t)
         {
             return Lerp(a, b, t, false, true);
         }
 
-        static UnityEngine.Gradient Lerp(this UnityEngine.Gradient a, UnityEngine.Gradient b, float t, bool noAlpha, bool noColor)
+        static Gradient Lerp(this Gradient a, Gradient b, float t, bool noAlpha, bool noColor)
         {
             //list of all the unique key times
             var keysTimes = new List<float>();
@@ -71,7 +71,7 @@ namespace Framly
                 alphas[i] = new GradientAlphaKey(clr.a, key);
             }
 
-            var g = new UnityEngine.Gradient();
+            var g = new Gradient();
             g.SetKeys(clrs, alphas);
 
             return g;

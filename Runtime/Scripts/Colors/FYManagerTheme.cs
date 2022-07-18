@@ -13,17 +13,9 @@ namespace Framly
             Instance = this;
         }
 
-        public void SetPaletteFromList(FYBool toggle)
-        {
-            SetPalette(paletteList[toggle.value == true ? 1 : 0]);
-        }
         public void SetPaletteFromList(int paletteIndex)
         {
             SetPalette(paletteList[paletteIndex]);
-        }
-        public void SetPaletteFromList(FYInt paletteIndex)
-        {
-            SetPalette(paletteList[paletteIndex.value]);
         }
         public void SetPalette(FYPalette palette)
         {

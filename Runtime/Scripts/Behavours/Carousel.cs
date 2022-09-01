@@ -1,4 +1,3 @@
-using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -7,21 +6,24 @@ namespace Framly
     public class Carousel : MonoBehaviour
     {
         public GameObject[] list;
-        [SerializeField] IntVariable index;
-        [SerializeField] IntEvent _onIndexChange;
+        public IntVariable index;
         [SerializeField] bool _loop;
+
         void Start()
         {
-            _onIndexChange.Register(ApplyCarousel);
+            index.Changed.Register(ApplyCarousel);
         }
         private void OnDestroy()
         {
-            _onIndexChange.Unregister(ApplyCarousel);
+            index.Changed.Unregister(ApplyCarousel);
         }
 
         public void ApplyCarousel()
         {
             int getPanelsLength = list.Length;
+            if (getPanelsLength < 0)
+                return;
+
             if (_loop)
             {
                 if (index.Value < 0)
@@ -42,17 +44,14 @@ namespace Framly
 
             for (int i = 0; i < getPanelsLength; i++)
             {
+                if (list[i] == null)
+                    return;
+
                 list[i].SetActive(false);
-                try
+
+                if (i == index.Value)
                 {
-                    if (i == index.Value)
-                    {
-                        list[i].SetActive(true);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"Carousel Error\n{ex}");
+                    list[i].SetActive(true);
                 }
             }
         }

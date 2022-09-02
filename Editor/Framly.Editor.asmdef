@@ -1,0 +1,21 @@
+{
+    "name": "Framly.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:29492541a59d04a81b47a7f225e8a22d",
+        "GUID:14165214884ae4a619bfb290f28194a7",
+        "GUID:e014122d73fa8bc4e84c2cc967a8b1f8",
+        "GUID:b8a5dbacf1c3757488603bd4e31070ed"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

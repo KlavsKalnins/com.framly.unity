@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168142326}
-  - component: {fileID: 168142328}
+  - component: {fileID: 168142327}
   m_Layer: 0
   m_Name: ManagerView
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_Father: {fileID: 921487900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &168142328
+--- !u!114 &168142327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,13 +164,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 168142325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39a741cf7f37a444ab1d51edbab74d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ab307c3012745749a8effa998594d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: {fileID: 11400000, guid: 5b049ba15a0e30543bdd2016d8230d54, type: 2}
   list:
   - {fileID: 1423135975}
   - {fileID: 493329672}
-  index: {fileID: 11400000, guid: 5b049ba15a0e30543bdd2016d8230d54, type: 2}
   _loop: 0
 --- !u!1 &336687910
 GameObject:

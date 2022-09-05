@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Framly
 {
-    public class Carousel : MonoBehaviour
+    public class Carousel<T> : MonoBehaviour
     {
-        public GameObject[] list;
         public IntVariable index;
-        [SerializeField] bool _loop;
+        public T[] list;
+        [SerializeField] protected bool _loop;
 
         void Start()
         {
@@ -21,8 +21,6 @@ namespace Framly
         public void ApplyCarousel()
         {
             int getPanelsLength = list.Length;
-            if (getPanelsLength < 0)
-                return;
 
             if (_loop)
             {
@@ -33,6 +31,7 @@ namespace Framly
                 else if (index.Value >= getPanelsLength)
                 {
                     index.Value = 0;
+                    return;
                 }
             }
 
@@ -42,18 +41,34 @@ namespace Framly
                 return;
             }
 
+            CarouselLogic();
+        }
+        public virtual void CarouselLogic()
+        {
+            int getPanelsLength = list.Length;
+
             for (int i = 0; i < getPanelsLength; i++)
             {
-                if (list[i] == null)
-                    return;
-
-                list[i].SetActive(false);
-
-                if (i == index.Value)
+                if (i != index.Value)
                 {
-                    list[i].SetActive(true);
+                    CarouselDisabledItemLogic(i);
+                }
+                else
+                {
+                    CarouselActiveItemLogic(i);
                 }
             }
+        }
+
+        public virtual void CarouselActiveItemLogic(int i)
+        {
+            Debug.LogError("Please implement individual methods: 'CarouselActiveItemLogic' and 'CarouselDisabledItemLogic' \n" +
+                "or implement the full CarouselLogic method by overriding it!");
+        }
+        public virtual void CarouselDisabledItemLogic(int i)
+        {
+            Debug.LogError("Please implement individual methods: 'CarouselActiveItemLogic' and 'CarouselDisabledItemLogic' \n" +
+                "or implement the full CarouselLogic method by overriding it!");
         }
     }
 }
